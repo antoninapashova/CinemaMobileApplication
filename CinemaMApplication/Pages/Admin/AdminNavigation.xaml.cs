@@ -29,7 +29,11 @@ namespace CinemaMApplication.Pages.Admin
             {
                 Detail = new NavigationPage(new FilmCatalog());
             }
-            
+             if(selectedItem == "Logout")
+            {
+                LoggedInUser.loggedInUser = null;
+                Detail = new NavigationPage(new MainPage());
+            }
 
         }
     }

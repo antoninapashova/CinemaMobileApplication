@@ -27,6 +27,12 @@ namespace CinemaMApplication.Pages.User
             {
                 Detail = new NavigationPage(new UserReservations());
             }
+            
+             if(selectedItem == "Logout")
+            {
+                LoggedInUser.loggedInUser = null;
+                Detail = new NavigationPage(new MainPage());
+            }
         }
     }
 }

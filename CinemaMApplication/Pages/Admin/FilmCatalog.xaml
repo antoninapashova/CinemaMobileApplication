@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CinemaMApplication.Pages.Admin.FilmCatalog">
+    <ListView x:Name="MyListView"
+            ItemsSource="{Binding Items}"
+            CachingStrategy="RecycleElement"
+             HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <Label  Text="{Binding filmID}" IsVisible="false"/>
+                        <Label Text="Name" TextDecorations="Underline"/>
+                        <Label Text="{Binding name}"/>
+                        <Label Text="About the film" TextDecorations="Underline"/>
+                        <Label Text="{Binding description}"/>
+                        <Label Text="Start" TextDecorations="Underline"/>
+                        <Label Text="{Binding start}"/>
+                        <Label Text="Cinemaroom number" TextDecorations="Underline"/>
+                        <Label Text="{Binding cinemaRoom.number}"/>
+                        <Label Text="Ticket price" TextDecorations="Underline"/>
+                        <Label Text="{Binding ticketPrice}" x:Name="ticketPrice"/>
+                        <Label Text="Genre" TextDecorations="Underline"/>
+                        <Label Text="{Binding genre.name}"/>
+                        <Label Text="Duration" TextDecorations="Underline"/>
+                        <Label Text="{Binding duration}"/>
+                        <Button Text="Edit" Clicked="edit_film" CommandParameter="{Binding filmID}"/>
+                        <Button Text="Delete" Clicked="deleteFilmFromCatalog" CommandParameter="{Binding filmID}"/>
+                        
+                    </StackLayout>
+
+                </ViewCell>
+
+            </DataTemplate>
+        </ListView.ItemTemplate> 
+    </ListView>
+    </ContentPage>

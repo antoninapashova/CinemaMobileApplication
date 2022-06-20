@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:behaviors="clr-namespace:CinemaMApplication.Behavior" xmlns:behaviors1="clr-namespace:CinemaMApplication.Behaviors"
+             x:Class="CinemaMApplication.Pages.Guest.RegisterPage">
+    <ContentPage.Content>
+        <AbsoluteLayout Margin="5,0,5,5">
+            <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="30,0,30,0" >
+                <Label TextColor="Black" FontAttributes="Bold" Text="REGISTER" FlexLayout.AlignSelf="Center" FontSize="20"/>
+                <Entry x:Name="userNameEntry" ReturnType="Next" MaxLength="10" Placeholder="Username" 
+                       FontSize="Medium" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" 
+                       TextColor="Black" Keyboard="Text" >
+                    <Entry.Behaviors>
+                        <behaviors1:UsernameValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Entry x:Name="firstNameEntry" ReturnType="Next" MaxLength="12"  
+                       Placeholder="First name" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  
+                       HorizontalOptions="CenterAndExpand"  TextColor="Black" >
+                    <Entry.Behaviors>
+                        <behaviors:FirtstNameValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Entry x:Name="lastNameEntry" ReturnType="Next" MaxLength="12"  
+                       Placeholder="Last name" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  
+                       HorizontalOptions="CenterAndExpand"  TextColor="Black" >
+                    <Entry.Behaviors>
+                        <behaviors:FirtstNameValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Entry x:Name="emailEntry" ReturnType="Next" MaxLength="40"  
+                       Placeholder="Email" FontSize="Medium" 
+                       FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" 
+                       TextColor="Black" >
+                    <Entry.Behaviors>
+                        <behaviors:EmailValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Entry x:Name="phoneEntry" ReturnType="Next" MaxLength="12"  
+                       Placeholder="Phone" FontSize="Medium" 
+                       FlexLayout.AlignSelf="Stretch"  
+                       HorizontalOptions="CenterAndExpand"  TextColor="Black" >
+                    <Entry.Behaviors>
+                        <behaviors1:PhoneValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Entry x:Name="passwordEntry" ReturnType="Next" MaxLength="12" 
+                       IsPassword="True" Placeholder="Password" FontSize="Medium" 
+                       FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand"  
+                       TextColor="Black" >
+                    <Entry.Behaviors>
+                        <behaviors:PasswordValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Entry x:Name="confirmpasswordEntry" ReturnType="Next" MaxLength="12" 
+                       IsPassword="True" Placeholder="Confirm Password" FontSize="Medium" 
+                       FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand"  
+                       TextColor="Black" >
+                    <Entry.Behaviors>
+                        <behaviors:PasswordValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Label x:Name="warningLabel" Text="The password and the confirmPassword don`t match" IsVisible="False" TextColor="Blue" FontSize="15" BackgroundColor="Transparent" FlexLayout.AlignSelf="End"/>
+
+                <Button x:Name="signUp" Clicked="SignupValidation_ButtonClicked" FontSize="Medium" TextColor="White" BorderColor="Black" BackgroundColor="#00b33c"  CornerRadius="5" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Text="Sign Up"/>
+            </FlexLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

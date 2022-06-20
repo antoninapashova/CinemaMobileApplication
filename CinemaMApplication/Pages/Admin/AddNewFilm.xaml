@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CinemaMApplication.Pages.Admin.AddNewFilm">
+    <ContentPage.Content>
+        <AbsoluteLayout Margin="5,0,5,5">
+        <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="30,0,30,0" >
+
+            <Entry x:Name="filmNameEntry" ReturnType="Next" MaxLength="10" Placeholder="Film name" 
+                       FontSize="Medium" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" 
+                       TextColor="Black" Keyboard="Text" >
+                
+            </Entry>
+
+            <Entry x:Name="descriptionEntry" ReturnType="Next" MaxLength="12"  
+                       Placeholder="Description" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  
+                       HorizontalOptions="CenterAndExpand"  TextColor="Black" >
+               
+            </Entry>
+            
+             <Picker Title="Select a genre" 
+                      x:Name="genrePicker"
+                     TextColor="Black"
+                      />
+
+            <Entry x:Name="ticketPriceEntry" ReturnType="Next" MaxLength="40"  
+                       Placeholder="Ticket price" FontSize="Medium" 
+                       FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" 
+                       TextColor="Black" >               </Entry>
+
+            <Entry x:Name="durationEntry" ReturnType="Next" MaxLength="12"  
+                       Placeholder="Duration" FontSize="Medium" 
+                       FlexLayout.AlignSelf="Stretch"  
+                       HorizontalOptions="CenterAndExpand"  TextColor="Black" >
+           </Entry>
+
+                <DatePicker x:Name="startDatePicker" 
+                    Format="D"
+                    Margin="30, 0, 0, 30"
+                    />
+                <TimePicker x:Name="timePicker" Format="T"/>
+
+                <Picker Title="Select a cinemaroom" 
+                     x:Name="cinemaRoomPicker"
+                     TextColor="Black"/>
+
+                <Button x:Name="signUp" Clicked="AddNewFilm_ButtonClicked" FontSize="Medium" TextColor="White" BorderColor="Black" BackgroundColor="#00b33c"  CornerRadius="5" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Text="Sign Up"/>
+        </FlexLayout>
+    </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

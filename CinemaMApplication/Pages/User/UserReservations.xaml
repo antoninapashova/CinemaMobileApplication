@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CinemaMApplication.Pages.User.UserReservations">
+  <ListView x:Name="MyListView"
+            ItemsSource="{Binding Items}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement"
+             HasUnevenRows="True">
+  
+
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout>
+              
+                        <Label Text="All reservations"/>
+                        <Label Text="Film"/>
+                        <Label Text="{Binding filmResponse.name}" 
+                   Style="{DynamicResource ListItemTextStyle}" />
+                        <Label Text="NumberOfTickets"/>
+                        <Label Text="{Binding numberOfTickets}" 
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+                        <Label Text="Cinema room"/>
+                        <Label Text="{Binding filmResponse.cinemaRoom.number}" 
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+                        <Label Text="Date and time"/>
+                        <Label Text="{Binding filmResponse.start}" 
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+                        <Button Text="Remove reservation" Clicked="Delete_Reservation" 
+                                CommandParameter="{Binding reservationId}"/>
+                    </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    
+  </ListView>
+</ContentPage>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CinemaMApplication.Pages.Admin.Edit_Film">
+    
+    <ContentPage.Content>
+        <AbsoluteLayout Margin="5,0,5,5" x:Name="FormFilmEdit">
+            <FlexLayout JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="30,0,30,0">
+                <Label Text="Edit form"/>
+                <Entry x:Name="filmNameEntry" ReturnType="Next" MaxLength="20" Placeholder="Film name" 
+                       FontSize="Medium" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" 
+                       TextColor="Black" Keyboard="Text" Text="{Binding name}">
+
+                </Entry>
+
+                <Entry x:Name="descriptionEntry" ReturnType="Next" MaxLength="100"  
+                       Placeholder="Description" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  
+                       HorizontalOptions="CenterAndExpand"  TextColor="Black" Text="{Binding description}">               </Entry>
+
+                <Picker Title="Select a genre" 
+                        x:Name="genrePicker"
+                       TextColor="Black" 
+                      />
+
+                <Entry x:Name="ticketPriceEntry" ReturnType="Next" MaxLength="3"  
+                       Placeholder="Ticket price" FontSize="Medium" 
+                       FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" 
+                       TextColor="Black" Text="{Binding ticketPrice}"></Entry>
+
+                <Entry x:Name="durationEntry" ReturnType="Next" MaxLength="10"  
+                       Placeholder="Duration" FontSize="Medium" 
+                       FlexLayout.AlignSelf="Stretch"  
+                       HorizontalOptions="CenterAndExpand"  TextColor="Black" Text="{Binding duration}">
+                </Entry>
+
+                <DatePicker x:Name="startDatePicker" 
+                    Format="D"
+                    Margin="30, 0, 0, 30" 
+                    />
+                <TimePicker x:Name="timePicker" Format="T" />
+
+                <Picker Title="Select a cinemaroom" 
+                     x:Name="cinemaRoomPicker"
+                     TextColor="Black" />
+
+                <Button x:Name="editButton" Text="Edit" Clicked="Button_Clicked" FontSize="Medium" 
+                        TextColor="White" BorderColor="Black" BackgroundColor="#00b33c"  
+                            CornerRadius="5" FlexLayout.AlignSelf="Stretch"  
+                            HorizontalOptions="CenterAndExpand"/>
+
+            </FlexLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
